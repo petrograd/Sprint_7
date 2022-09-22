@@ -32,6 +32,14 @@ public class Courier {
                 RandomStringUtils.randomAlphabetic(10)
         );
     }
+    public static Courier getWithoutLogin() {
+        return new Courier(
+                RandomStringUtils.randomAlphanumeric(10) + "@example.com",
+                "", //RandomStringUtils.randomAlphanumeric(10),
+                "P@ssw0rd",
+                RandomStringUtils.randomAlphabetic(10)
+        );
+    }
 
     public String getEmail() {
         return email;
