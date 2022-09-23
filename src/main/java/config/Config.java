@@ -6,11 +6,6 @@ public class Config {
     public static final String COURIER_ID = "/courier/{courierId}";
     public static final String LOGIN = "/courier/login";
 
-    //    private final String ROOT = "/courier";
-//    private final String COURIER = "/courier/{courierId}";
-//    private final String LOGIN = ROOT + "/login";
-
-
 
 
 }

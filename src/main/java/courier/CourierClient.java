@@ -18,9 +18,7 @@ public class CourierClient extends BaseClient {
                 .body(creds)
                 .when()
                 .post(Config.LOGIN)
-                .then().log().all()
-                .assertThat()
-                .statusCode(200);
+                .then().log().all();
     }
 
     public void delete(int courierId) {
@@ -28,8 +26,7 @@ public class CourierClient extends BaseClient {
                 .pathParam("courierId", courierId)
                 .when()
                 .delete(Config.COURIER_ID)
-                .then().log().all()
-                .assertThat()
-                .statusCode(200);
+                .then().log().all();
+
     }
 }

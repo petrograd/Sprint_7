@@ -40,6 +40,12 @@ public class Courier {
                 RandomStringUtils.randomAlphabetic(10)
         );
     }
+    public void setRandomPassword() {
+        this.setPassword(RandomStringUtils.randomAlphanumeric(10));
+    }
+    public void setRandomLogin() {
+        this.setLogin(RandomStringUtils.randomAlphanumeric(10));
+    }
 
     public String getEmail() {
         return email;
