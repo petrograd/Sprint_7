@@ -1,6 +1,9 @@
-package courier;
+package client;
 
+import client.BaseClient;
 import config.Config;
+import courier.Courier;
+import courier.CourierCredentials;
 import io.restassured.response.ValidatableResponse;
 
 public class CourierClient extends BaseClient {

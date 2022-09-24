@@ -1,4 +1,4 @@
-package courier;
+package client;
 
 import config.Config;
 import io.restassured.specification.RequestSpecification;

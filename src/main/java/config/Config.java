@@ -5,7 +5,6 @@ public class Config {
     public static final String COURIER_ENDPOINT = "/courier";
     public static final String COURIER_ID = "/courier/{courierId}";
     public static final String LOGIN = "/courier/login";
-
-
-
+    public static final String ORDER_ENDPOINT = "/orders";
+    public static final String ORDER_CANCEL = ORDER_ENDPOINT + "/cancel";
 }

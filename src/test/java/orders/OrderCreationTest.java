@@ -1,8 +1,10 @@
 package orders;
 
+import client.OrderClient;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
+import order.Order;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,20 +19,21 @@ import static org.hamcrest.Matchers.notNullValue;
 @RunWith(Parameterized.class)
 @DisplayName("Создание заказа")
 public class OrderCreationTest {
-
     private final List<String> colors;
+    private OrderClient orderClient;
+    private int track;
 
     public OrderCreationTest(List<String> colors) {
         this.colors = colors;
     }
 
     @Parameterized.Parameters(name = "Color: {0}")
-    public static Object[] generateData() {
+    public static Object[] dataForTest() {
         return new Object[]{
-                asList(GREY),
-                asList(BLACK),
-                asList(BLACK, GREY),
-                asList(PURPLE),
+                asList(OrderClient.GREY),
+                asList(OrderClient.BLACK),
+                asList(OrderClient.BLACK, OrderClient.GREY),
+                asList(OrderClient.YELLOW),
                 asList(""),
                 null,
         };
@@ -41,27 +44,27 @@ public class OrderCreationTest {
     @Description("Ожидаемый код ответа: 201")
     public void shouldPlaceOrderWithAnyColors() {
 
-        expectedStatusCode = 201;
+        int expectedStatusCode = 201;
 
-        ordersClient = new OrdersClient();
-        order = createRandomWithoutColor();
+        Order order = Order.getDefault();
         order.setColor(colors);
-        ValidatableResponse response = ordersClient.create(order);
+
+        orderClient = new OrderClient();
+        ValidatableResponse response = orderClient.create(order);
         response
                 .assertThat()
                 .statusCode(expectedStatusCode)
                 .and()
                 .body("track", is(notNullValue()));
 
-        track = ordersClient.getTrack(response);
+        track = orderClient.getTrack(response);
     }
 
     @After
     @DisplayName("Удаление тестового заказа")
-    public void cleanUp() {
-        cleanUpOrder();
+    public void teardown() {
+        orderClient.cancelOrder(track);
     }
-
 }
 
 

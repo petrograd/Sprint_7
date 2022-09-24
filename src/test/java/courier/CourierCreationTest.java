@@ -1,5 +1,6 @@
 package courier;
 
+import client.CourierClient;
 import io.qameta.allure.Description;
 import org.junit.After;
 import org.junit.Before;
@@ -8,7 +9,7 @@ import io.qameta.allure.junit4.DisplayName;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
-
+@DisplayName("Создать курьера")
 public class CourierCreationTest {
 
     Courier courier;
