@@ -11,6 +11,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertTrue;
 
+@DisplayName("Тест: Логин курьера")
 public class CourierLoginTest {
 
     private Courier courier;

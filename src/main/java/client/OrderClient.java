@@ -43,4 +43,13 @@ public class OrderClient extends BaseClient {
                 .log().all();
     }
 
+    @Step("Получение списка заказов")
+    public ValidatableResponse getListOfOrders() {
+        Response response = getSpec()
+                .get(Config.ORDER_ENDPOINT);
+        return response
+                .then()
+                .log().all();
+    }
+
 }

@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
 @RunWith(Parameterized.class)
-@DisplayName("Создание заказа")
+@DisplayName("Тест: Создание заказа")
 public class OrderCreationTest {
     private final List<String> colors;
     private OrderClient orderClient;
@@ -40,7 +40,7 @@ public class OrderCreationTest {
     }
 
     @Test
-    @DisplayName("Можно создать заказ с любым набором цветов")
+    @DisplayName(" {colors.toString()} .Можно создать заказ с любым набором цветов")
     @Description("Ожидаемый код ответа: 201")
     public void shouldPlaceOrderWithAnyColors() {
 

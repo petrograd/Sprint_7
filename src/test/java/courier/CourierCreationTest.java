@@ -9,7 +9,7 @@ import io.qameta.allure.junit4.DisplayName;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
-@DisplayName("Создать курьера")
+@DisplayName("Тест: Создание курьера")
 public class CourierCreationTest {
 
     Courier courier;

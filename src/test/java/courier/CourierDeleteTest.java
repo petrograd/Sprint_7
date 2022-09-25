@@ -13,6 +13,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertTrue;
 
+@DisplayName("Тест: Удаление курьера")
 public class CourierDeleteTest {
 
     private Courier courier;
